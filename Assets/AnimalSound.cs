@@ -1,36 +1,44 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class AnimalSound : MonoBehaviour
 {
     private AudioSource audioSource;
+    private bool yaContado = false;
 
-    [Header("Configuración del Animal")]
-    [Tooltip("Texto que aparecerá en pantalla al interactuar con este animal")]
-    public string animalMessage = "¡Muuu!";
+    [Header("ConfiguraciÃ³n del Animal")]
+    public string animalMessage = "Â¡Muuu!";
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); // Busca el AudioSource en este animal
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Solo el ratoncito
+        if (other.CompareTag("Player"))
         {
-            // ?? Reproducir sonido (onomatopeya)
             if (!audioSource.isPlaying)
-            {
                 audioSource.Play();
-            }
 
-            // ?? Mostrar mensaje en UI
             if (AnimalMessageUI.Instance != null)
-            {
                 AnimalMessageUI.Instance.ShowMessage(animalMessage);
+
+            // ðŸ‘‰ AVISAR AL CONTROLADOR (UNA SOLA VEZ)
+            if (!yaContado)
+            {
+                ControlExploration control =
+                    FindObjectOfType<ControlExploration>();
+
+                if (control != null)
+                {
+                    control.AnimalVisitado();
+                    yaContado = true;
+                }
             }
         }
     }
 }
+
 
 
 

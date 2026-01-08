@@ -476,17 +476,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129880424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 402378909}
-  m_Father: {fileID: 1362555166}
+  m_Father: {fileID: 1910440063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: 25, y: -34}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &129880426
@@ -532,7 +532,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 129880427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 882074072}
+        m_TargetAssemblyTypeName: ControlExploration, Assembly-CSharp
+        m_MethodName: IrANivel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &129880427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2760,6 +2772,52 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2085801710}
   m_SourcePrefab: {fileID: 100100000, guid: a8876e40bc40742e88ee1f7a9e6931d1, type: 3}
+--- !u!1 &882074071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882074073}
+  - component: {fileID: 882074072}
+  m_Layer: 0
+  m_Name: ControlExploracion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &882074072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882074071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b695e4eeef8150847b6c4a1670954034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalAnimales: 6
+  panelFinExploracion: {fileID: 1910440062}
+--- !u!4 &882074073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882074071}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9981313, z: -0, w: 0.061106425}
+  m_LocalPosition: {x: 47.26, y: 0.27, z: 44.06}
+  m_LocalScale: {x: 1.4601004, y: 1.5404086, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &894931901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4369,7 +4427,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1295847028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 882074072}
+        m_TargetAssemblyTypeName: ControlExploration, Assembly-CSharp
+        m_MethodName: IrAlMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1295847028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4637,7 +4707,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1952266082}
-  - {fileID: 129880425}
   m_Father: {fileID: 1910440063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4688,7 +4757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1362555168}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 882074072}
+        m_TargetAssemblyTypeName: ControlExploration, Assembly-CSharp
+        m_MethodName: CerrarPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1362555168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5905,7 +5986,6 @@ GameObject:
   - component: {fileID: 1871338566}
   - component: {fileID: 1871338565}
   - component: {fileID: 1871338564}
-  - component: {fileID: 1871338563}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5935,18 +6015,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1871338563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871338561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef98b20fe810e24fb2682cd1e4eb415, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1871338564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6047,6 +6115,7 @@ RectTransform:
   m_Children:
   - {fileID: 411088024}
   - {fileID: 1362555166}
+  - {fileID: 129880425}
   - {fileID: 1295847026}
   m_Father: {fileID: 1822738204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7789,7 +7858,7 @@ Transform:
   m_GameObject: {fileID: 3851015955419636708}
   serializedVersion: 2
   m_LocalRotation: {x: -0.04382479, y: 0.5785895, z: -0.0051189414, w: 0.81442463}
-  m_LocalPosition: {x: 41.34, y: 0.25, z: 8.88}
+  m_LocalPosition: {x: 41.158, y: 0.427, z: 9.356}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8647,6 +8716,7 @@ SceneRoots:
   - {fileID: 1464687575}
   - {fileID: 1820773821}
   - {fileID: 1736962175}
+  - {fileID: 882074073}
   - {fileID: 1194188815}
   - {fileID: 2050983198}
   - {fileID: 424374765}
