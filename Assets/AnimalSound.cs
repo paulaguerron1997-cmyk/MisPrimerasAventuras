@@ -23,12 +23,9 @@ public class AnimalSound : MonoBehaviour
             if (AnimalMessageUI.Instance != null)
                 AnimalMessageUI.Instance.ShowMessage(animalMessage);
 
-            // 👉 AVISAR AL CONTROLADOR (UNA SOLA VEZ)
             if (!yaContado)
             {
-                ControlExploration control =
-                    FindObjectOfType<ControlExploration>();
-
+                ControlExploration control = FindObjectOfType<ControlExploration>();
                 if (control != null)
                 {
                     control.AnimalVisitado();
@@ -38,6 +35,12 @@ public class AnimalSound : MonoBehaviour
         }
     }
 }
+
+
+
+
+
+
 
 
 
