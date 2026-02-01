@@ -1,16 +1,41 @@
 ﻿using UnityEngine;
 
-public class CofreMision : MonoBehaviour
+public class CofreMisionTrigger : MonoBehaviour
 {
-    [Header("Animal objetivo de esta misión")]
-    public string animalObjetivo = "Vaca"; // 👈 cámbialo en el Inspector
+    public string animalObjetivo = "Gato";
+    public AudioClip sonidoMision;
+    private AudioSource audioSource;
+    private bool misionActivada = false;
+
+    void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameManager.Instance != null)
+        // Solo si entra el Player
+        if (!misionActivada && other.CompareTag("Player"))
         {
-            GameManager.Instance.EstablecerMision(animalObjetivo);
+            Debug.Log("🎁 Cofre: ratón entró - misión activada");
+
+            if (sonidoMision != null)
+                audioSource.PlayOneShot(sonidoMision);
+
+            if (GameManager.Instance != null)
+                GameManager.Instance.EstablecerMision(animalObjetivo);
+
+            misionActivada = true;
         }
     }
 }
+
+
+
+
+
+
+
+
 

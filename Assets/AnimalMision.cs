@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 
-public class AnimalMision : MonoBehaviour
+public class AnimalMisionTrigger : MonoBehaviour
 {
-    [Header("Configuración del Animal")]
-    public string nombreAnimal = "Vaca";
-
-    [Header("Audio")]
+    public string nombreAnimal = "Gato";
     public AudioClip sonidoAnimal;
     private AudioSource audioSource;
+    private bool yaValidado = false;
 
     void Start()
     {
@@ -17,20 +15,23 @@ public class AnimalMision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!yaValidado && other.CompareTag("Player"))
         {
-            // 🎵 Reproduce sonido
-            if (sonidoAnimal != null)
-            {
-                audioSource.clip = sonidoAnimal;
-                audioSource.Play();
-            }
+            Debug.Log("🐾 Animal: ratón entró - " + nombreAnimal);
 
-            // 👉 Valida misión
+            if (sonidoAnimal != null)
+                audioSource.PlayOneShot(sonidoAnimal);
+
             if (GameManager.Instance != null)
                 GameManager.Instance.ValidarAnimal(nombreAnimal);
+
+            yaValidado = true;
         }
     }
 }
+
+
+
+
 
 

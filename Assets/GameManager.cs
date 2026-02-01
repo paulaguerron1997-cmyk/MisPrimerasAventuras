@@ -4,34 +4,23 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Misión actual")]
-    public string animalObjetivo = "";  // Se asigna desde el cofre
+    public string animalObjetivo = "";
 
     private void Awake()
     {
+        Debug.Log("GameManager activo en escena Nivel2");
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
 
-    // 👉 Llamado desde el Cofre
     public void EstablecerMision(string nuevoObjetivo)
     {
         animalObjetivo = nuevoObjetivo;
-        Debug.Log("🔔 Nueva misión: Busca " + animalObjetivo);
-
-        if (AnimalMessageUI.Instance != null)
-        {
-            AnimalMessageUI.Instance.ShowMessage("🔔 Busca al " + animalObjetivo + "!");
-        }
+        Debug.Log("🔔 Busca al " + animalObjetivo + "!");
     }
 
-    // 👉 Llamado desde el animal
     public void ValidarAnimal(string nombreAnimal)
     {
         if (string.IsNullOrEmpty(animalObjetivo))
@@ -43,25 +32,16 @@ public class GameManager : MonoBehaviour
         if (nombreAnimal == animalObjetivo)
         {
             Debug.Log("🎉 Correcto: " + nombreAnimal);
-
-            if (AnimalMessageUI.Instance != null)
-            {
-                AnimalMessageUI.Instance.ShowMessage("✅ ¡Muy bien! Era el " + nombreAnimal + " 🎉");
-            }
-
-            animalObjetivo = ""; // Misión completada
+            animalObjetivo = "";
         }
         else
         {
             Debug.Log("❌ Incorrecto: " + nombreAnimal);
-
-            if (AnimalMessageUI.Instance != null)
-            {
-                AnimalMessageUI.Instance.ShowMessage("❌ Ups... no era el " + nombreAnimal);
-            }
         }
     }
 }
+
+
 
 
 
